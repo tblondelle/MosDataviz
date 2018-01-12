@@ -1,35 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
     <title>home</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-
   </head>
-
-
-
-
-
 
   <body>
     <div class="container text-center">
       <br>
+	    <h6 class="joke" style="color:white; font-size:9px"><small>(Actually losing your time, right!?)</small></h6>
       <br>
       <br>
       <br>
       <br>
       <svg></svg>
-      <p ><a href="https://github.com/tblondelle/MosDataviz">Return to Github</a></p>
-
-
-
+      <p ><a href="https://github.com/tblondelle/MosDataviz">Back to GitHub</a></p>
 
       <script>
         var svg = d3.select("svg")
@@ -46,31 +34,26 @@
             return y(d)
           })
 
-
-
         var data = [12, 50, 32, 12, 10, 2, 10];
-
         var x = d3.scaleLinear().range([150, 10])
-          .domain([0, 6])
-
+          .domain([0, 6]);
         var y = d3.scaleLinear().range([100, 10])
-          .domain([0, d3.max(data)])
-
-
+          .domain([0, d3.max(data)]);
 
         svg.selectAll(".bar").data(data).enter()
           .append("rect")
           .attr("class", "bar")
           .attr("width", 10)
           .attr("height", function(d){
-            return 100 - y(d)
+            return  100 - y(0)
           })
           .attr("x", function(d,i){
             return x(6 - i)
           })
           .attr("y", function(d){
-            return y(d)
+            return y(0)
           })
+		  
 
         function do1(){
           data.unshift(data.pop())
@@ -94,12 +77,16 @@
         }
 
         setInterval(function(){
-
           do1()
           //console.log(data)
-          //setTimeout(do2, 1000)
-
-        }, 2000)
+          //setTimeout(do1, 1000)
+        }, 750)
+		
+		setTimeout(function(){
+			d3.select(".joke").transition().style("color", "grey")
+		}, 4000)
+		
+		
 
 
       </script>

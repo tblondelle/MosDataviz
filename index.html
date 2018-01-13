@@ -34,7 +34,7 @@
             return y(d)
           })
 
-        var data = [12, 50, 32, 12, 10, 2, 10];
+        var data = [22, 50, 32, 12, 10, 2];
         var x = d3.scaleLinear().range([150, 10])
           .domain([0, 6]);
         var y = d3.scaleLinear().range([100, 10])
@@ -43,7 +43,8 @@
         svg.selectAll(".bar").data(data).enter()
           .append("rect")
           .attr("class", "bar")
-          .attr("width", 10)
+          .attr("width", 12)
+		  .attr("fill", "#FF6633")
           .attr("height", function(d){
             return  100 - y(0)
           })
@@ -54,10 +55,13 @@
             return y(0)
           })
 		  
+		 
 
-        function do1(){
-          data.unshift(data.pop())
-          svg.selectAll(".bar").data(data).transition()
+        function updateData(){
+		  permute(data);
+		  //shuffle(data)
+          
+          svg.selectAll(".bar").data(data).transition().duration(500).ease(d3.easeExpOut) //d3.easeBounceOut
             .attr("height", function(d){
               return 100 - y(d)
             })
@@ -68,16 +72,26 @@
               return y(d)
             })
         }
+		
+		/**
+		 * Shuffles array in place. ES6 version
+		 * @param {Array} a items An array containing the items.
+		 */
+		function shuffle(a) {
+			for (let i = a.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[a[i], a[j]] = [a[j], a[i]];
+			}
+			return a;
+		}
 
-        function do2(){
-          svg.selectAll(".bar")
-            .attr("x", function(d,i){
-              return x(6-i)
-            })
-        }
+
+		function permute(data){
+		  data.unshift(data.pop())
+		}
 
         setInterval(function(){
-          do1()
+          updateData()
           //console.log(data)
           //setTimeout(do1, 1000)
         }, 750)
@@ -87,8 +101,6 @@
 		}, 4000)
 		
 		
-
-
       </script>
       
     </div>
@@ -96,12 +108,10 @@
 
 
 
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>-->
   </body>
 </html>

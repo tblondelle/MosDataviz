@@ -28,14 +28,14 @@ We have described only the most common time series visualisation, but some varia
 
 ## 4. Sources
 
-[1] OECD Glossary of Statistical Terms - Time Series Definition. (2005). Retrieved January 13, 2018, from https://stats.oecd.org/glossary/detail.asp?ID=2708
+[1] *OECD Glossary of Statistical Terms - Time Series Definition*. (2005). Retrieved January 13, 2018, from https://stats.oecd.org/glossary/detail.asp?ID=2708
 
-[2] Tufte, E. R. (1983). The Visual Display of Quantitative Information. Cheshire, Conn.: Graphics Press
+[2] Tufte, E. R. (1983). The Visual Display of Quantitative Information. *Cheshire, Conn.: Graphics Press*
 
 [3] Beniger J. R. and Robyn D L. (1978). "Quantitative graphics in statistics: A brief history". In: The American Statistician. 32: pp. 1–11. 
 
-[4] Playfair, W. (1786) The Commercial and Political Atlas.
+[4] Playfair, W. (1786) *The Commercial and Political Atlas*.
 
-[5] Saito, T., Miyamura, H. N., Yamamoto, M., Saito, H., Hoshiya, Y., and Kaseda, T. (2005) Two-tone pseudo coloring: Compact visualization for one-dimensional data. InfoVis ’05 , 23.
+[5] Saito, T., Miyamura, H. N., Yamamoto, M., Saito, H., Hoshiya, Y., and Kaseda, T. (2005) Two-tone pseudo coloring: Compact visualization for one-dimensional data. *InfoVis ’05* , 23.
 
-[6] Perrin C., Vernier F., Fekete, J. (2013) Interactive Horizon Graphs: Improving the Compact Visualization of Multiple Time Series Proceeding CHI '13 Proceedings of the SIGCHI Conference on Human Factors in Computing Systems pp.3217-3226
+[6] Perrin C., Vernier F., Fekete, J. (2013) Interactive Horizon Graphs: Improving the Compact Visualization of Multiple Time Series *Proceeding CHI '13 Proceedings of the SIGCHI Conference on Human Factors in Computing Systems* pp.3217-3226

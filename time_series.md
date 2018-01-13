@@ -6,22 +6,43 @@
 According to Edward Tufte [2], the scientist Johann Heinrich Lambert is the first person to introduce time series to scientific literature in the 1700s. Few visualisations are known however.
 
 Another first creator would be Joseph Priestley who, in 1765, had created time line charts, in which individual bars were used to visualise the lifespan of a person, and the whole can be used to compare the life spans of multiple persons. [3]
+
+![Priestley Chart](/pic/priestleychart.gif)
+__Priestley's Chart__
  
 The Scotsman William Playfair, used also time series graph to display the very famous  trade-balance time-series chart between England and Denmark and Norway, in 1786 [4] and the first graph using a line moving up and down as it progressed from left to right to show how values changed through time. These graphs were included in his *The Commercial and Political Atlas* (1786) [4] to argue against England's policy of financing colonial wars through national debt.
 
- 
+![Playfair Balance Chart](/pic/playfairbalance.png)
+__Playfair Balance Chart__
+
+![Playfair National Debt Chart](/pic/playfairnational-debt.jpg)
+__Playfair National Debt Chart__
+
+
 ## 2. Recent most famous ones
 Complex time series involving dozens of them to be compared fostered innovations.
 
-The simplest one is the reduced line Chart, which display stacked time series. Its simplicity makes it easy to quickly understand the shape of the graph but it also hinders its performance: it can be difficult to differentiate a maximum value in a specific point.
+The simplest one is the reduced line chart, which display stacked time series. Its simplicity makes it easy to quickly understand the shape of the graph but it also hinders its performance: it can be difficult to differentiate a maximum value in a specific point.
+
+![Reduced Line Chart](/pic/reducedlinechart.PNG)
+__Reduced Line Chart__
 
 Horizon graphs aims to solve this problem: introduced in 2005 [5], it allows a very dense amount of information in a very limited place, useful for financial visualisation.
 
-Other types of graph can be noted such as the braided graph and the slope graph.
- 
-Braided Graph
+![Understanding Horizon graph](/pic/horizongraphunderstand.PNG)
+__Understanding Horizon graph__
 
-Slope chart
+![Horizon graph](/pic/horizongraph.png)
+__Horizon graph__
+
+
+Other types of graph can be noted such as the braided graph and the slope graph.
+
+![Braid Graph](/pic/braidchart.PNG)
+__Braid Graph__
+
+![Slope Chart](/pic/slopechart.png)
+__Slope Chart__
 
 ## 3. Comments
 We have described only the most common time series visualisation, but some variations exist such as an Interactive Horizon Graph [6], that allows modifications of the parameters from the user. [http://www.aviz.fr/Research/IHG](http://www.aviz.fr/Research/IHG)

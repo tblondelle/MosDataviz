@@ -6,12 +6,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <title>home</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <style>
+        .joke {
+            cursor: pointer;
+            user-select: none;
+        }
+
+
+
+    </style>
   </head>
 
   <body>
     <div class="container text-center">
       <br>
-	    <h6 class="joke" style="color:white; font-size:9px"><small>(Actually losing your time, right!?)</small></h6>
+        <h6 class="joke" style="display:none; color:white; font-size:9px"><small>(Actually losing your time, right!?)</small></h6>
       <br>
       <br>
       <br>
@@ -24,83 +34,81 @@
           .attr("height", 100)
           .attr("width", 150);
 
-        var line = d3.line()
-          .x(function(d, i) {
-            console.log(d)
-            console.log(i)
-            return x(3)
-          })
-          .y(function(d,i) {
-            return y(d)
-          })
+        var width = 12;
 
-        var data = [22, 50, 32, 12, 10, 2];
+        var data = [22, 50, 32, 12, 24, 10, 2];
         var x = d3.scaleLinear().range([150, 10])
-          .domain([0, 6]);
+          .domain([0, 7]);
         var y = d3.scaleLinear().range([100, 10])
           .domain([0, d3.max(data)]);
 
         svg.selectAll(".bar").data(data).enter()
           .append("rect")
           .attr("class", "bar")
-          .attr("width", 12)
-		  .attr("fill", "#FF6633")
+          .attr("width", width)
+          .attr("fill", "#FF6633")
           .attr("height", function(d){
             return  100 - y(0)
           })
           .attr("x", function(d,i){
-            return x(6 - i)
+            return x(7 - i) + 12 - width
           })
           .attr("y", function(d){
             return y(0)
           })
-		  
-		 
+
 
         function updateData(){
-		  permute(data);
-		  //shuffle(data)
+          shuffle(data)
+          //permute(data);
           
           svg.selectAll(".bar").data(data).transition().duration(500).ease(d3.easeExpOut) //d3.easeBounceOut
             .attr("height", function(d){
               return 100 - y(d)
             })
             .attr("x", function(d,i){
-              return x(6 - i)
+              return x(7 - i) + 12 - width
             })
             .attr("y", function(d){
               return y(d)
             })
         }
-		
-		/**
-		 * Shuffles array in place. ES6 version
-		 * @param {Array} a items An array containing the items.
-		 */
-		function shuffle(a) {
-			for (let i = a.length - 1; i > 0; i--) {
-				const j = Math.floor(Math.random() * (i + 1));
-				[a[i], a[j]] = [a[j], a[i]];
-			}
-			return a;
-		}
+        
+        /**
+         * Shuffles array in place. ES6 version
+         * @param {Array} a items An array containing the items.
+         */
+        function shuffle(a) {
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
 
 
-		function permute(data){
-		  data.unshift(data.pop())
-		}
+        function permute(data){
+          data.unshift(data.pop())
+        }
 
         setInterval(function(){
           updateData()
-          //console.log(data)
-          //setTimeout(do1, 1000)
         }, 750)
-		
-		setTimeout(function(){
-			d3.select(".joke").transition().style("color", "grey")
-		}, 4000)
-		
-		
+        
+
+        setTimeout(function(){
+            d3.select(".joke")
+                .style("display", 'initial')
+                .transition()
+                .style("color", "grey")
+        }, 4000)
+        
+        d3.select(".joke")
+            .on("click", function(){
+                data.push(0)
+            })
+
+        
       </script>
       
     </div>

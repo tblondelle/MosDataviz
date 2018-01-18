@@ -58,7 +58,7 @@ __Stock market graph__
 It is often used to represent stock market evolutions.
 
 
-![The March of Progress](/img/progress.png)
+![The March of Progress](/img/progress.jpg)
 __The March of Progress__
 
 A peculiar time series is the March of Progress by natural history painter Rudolph Zallinger in 1965 for the Early Man volume. As the traditional way to represent time, this time again, time is represented through the x-axis, whereas the y-axis has not much meaning. The representation of the Evolution of Homo Sapiens is however easily grasped by the reader and proved to be very popular and often altered for other intents (such as the one displayed above).

@@ -2,5 +2,5 @@
 Repository for Data Visualisation class 
 
 ## Links
-- the start [webpage](https://github.com/tblondelle/MosDataviz).
-- the [brief report](/time_series.md) on time series.
+- the start [webpage](https://tblondelle.github.io/MosDataviz/) (dead-end).
+- the [brief report](https://tblondelle.github.io/MosDataviz/time_series) on time series.

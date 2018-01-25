@@ -8,10 +8,6 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <style>
-        .joke {
-            cursor: pointer;
-            user-select: none;
-        }
 
 
 
@@ -21,7 +17,6 @@
   <body>
     <div class="container text-center">
       <br>
-        <h6 class="joke" style="display:none; color:white; font-size:9px"><small>(Actually losing your time, right!?)</small></h6>
       <br>
       <br>
       <br>
@@ -86,28 +81,9 @@
             return a;
         }
 
-
-        function permute(data){
-          data.unshift(data.pop())
-        }
-
         setInterval(function(){
           updateData()
         }, 750)
-        
-
-        setTimeout(function(){
-            d3.select(".joke")
-                .style("display", 'initial')
-                .transition()
-                .style("color", "grey")
-        }, 4000)
-        
-        d3.select(".joke")
-            .on("click", function(){
-                data.push(0)
-            })
-
         
       </script>
       
